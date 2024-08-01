@@ -5,7 +5,7 @@
     "title_third": "Private Credit",
     "a_leading": "A leading",
     "title_yellow":"Asset Manager",
-    "americas_private":"in the Americas’<color-primary>Private</color-primary>",
+    "americas_private":"in the Americas’ <color-primary> Private</color-primary>",
     "credit_market":"<color-primary>Credit</color-primary> market",
     "hero-subline": "We support financial inclusion through Private Credit",
     "hero_contact":"Contact us"
@@ -82,7 +82,7 @@
       "first": {
         "f_img": "/images/fundsImg.png",
         "fund":"FUND I",
-        "card_title":"Mexico Payroll Discount Lending"
+        "card_title":"México Payroll Discount Lending"
       },
       "second": {
         "f_img": "/images/fundsImg.png",

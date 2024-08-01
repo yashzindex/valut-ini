@@ -16,7 +16,7 @@ export default function LangSwitcher() {
       >
         {pathname === "/es" ? <strong>Es</strong> : "Es"}
       </Link>
-      <span className="text-white">|</span>
+      <span className="text-white">| </span>
       <Link
         href="/en"
         className={`text-white text-[20px] font-normal leading-[20px] cursor-pointer ${

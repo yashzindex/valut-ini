@@ -9,6 +9,7 @@ import instagram from "@/../../public/svg/instagram.svg";
 import linkedin from "@/../../public/svg/linkedin.svg";
 import mail from "@/../../public/svg/mail.svg";
 import flag from "@/../../public/svg/flag.svg";
+import linkedinNew from "@/../../public/svg/linkedin-in-brands-solid.svg";
 import { useTranslations } from "next-intl";
 
 interface FooterProps {
@@ -56,7 +57,7 @@ export default function Footer() {
               />
             </Link>
             <div className="flex justify-center items-center gap-[47px] md:gap-[50px] xl:gap-[58px] md:mb-[60px] lg:mb-[112px]">
-              {socialMediaLinks.map((link, index) => (
+              {/* {socialMediaLinks.map((link, index) => (
                 <Link
                   key={index}
                   href={link.href}
@@ -71,7 +72,7 @@ export default function Footer() {
                     className="object-cover w-full max-sm:mb-1"
                   />
                 </Link>
-              ))}
+              ))} */}
             </div>
             {/* contact us Mobile-phone btn */}
             <div className="inline-flex w-full max-w-[361px] text-center mx-auto my-[30px] sm:my-5 md:my-[70px] md:mt-0 md:hidden">
@@ -102,6 +103,20 @@ export default function Footer() {
 function ContactDetailsDestop() {
   return (
     <div className="hidden md:flex flex-col gap-[24px]">
+      <Link href="https://www.linkedin.com/company/vault-investments-limited/" target="_blank" className="group">
+        <div className="flex gap-[24px]">
+            <Image
+              src={linkedinNew}
+              alt="linkedin"
+              className="object-contain h-[20px] w-[25px] mt-[4px]"
+            />
+            <div
+              className="text-[20px] font-normal leading-[144%] text-white group-hover:text-primary transition-colors duration-500"
+            >
+              https://www.linkedin.com/company/vault-investments-limited/
+            </div>
+        </div>
+      </Link>
       <div className="flex gap-[24px]">
         <Image
           src={mail}
@@ -134,16 +149,17 @@ function ContactDetailsMobile() {
   return (
     <div className="flex md:hidden flex-col gap-[21px]">
       <div className="flex gap-[19px]">
-        <Image
-          src={mail}
-          alt="mail"
-          className="object-contain h-[13px] md:h-[20px] w-[20px] mt-1"
-        />
-        <Link
-          href="mailto:contact@vault.com.mx"
-          className="text-[16px] md:text-[20px] font-normal leading-[144%] text-white hover:text-primary transition-colors duration-500"
-        >
-          contact@vault.com.mx
+        <Link href="#" className="group">
+          <Image
+            src={linkedinNew}
+            alt="mail"
+            className="object-contain h-[13px] md:h-[20px] w-[20px] mt-1"
+          />
+          <div
+            className="text-[16px] md:text-[20px] font-normal leading-[144%] text-white group-hover:text-primary transition-colors duration-500"
+          >
+            contact@vault.com.mx
+          </div>
         </Link>
       </div>
       <div className="flex gap-[19px]">
