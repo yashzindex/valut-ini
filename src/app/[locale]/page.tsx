@@ -39,7 +39,7 @@ export default function Home() {
           <Image
             src={sectoreBG}
             alt="sectoreBG"
-            className="object-contain hidden md:block absolute top-2 xl:top-0 left-0 z-[1] lg:max-w-[70%] xl:max-w-[80%] xxl:max-w-auto"
+            className="object-contain   hidden md:block absolute top-2 xl:top-0 left-0 z-[1] lg:max-w-[70%] xl:max-w-[80%] xxl:max-w-auto"
           />
         </div>
         <Location />
