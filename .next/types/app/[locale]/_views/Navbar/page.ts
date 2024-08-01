@@ -1,4 +1,4 @@
-// File: D:\yash\Project\NextJs\vault\valut-institutional\src\app\[locale]\_views\Navbar\page.tsx
+// File: D:\yash\Practise\Next\valut-git-yash\src\app\[locale]\_views\Navbar\page.tsx
 import * as entry from '../../../../../../src/app/[locale]/_views/Navbar/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
