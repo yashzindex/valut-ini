@@ -108,10 +108,10 @@ function ContactDetailsDestop() {
             <Image
               src={linkedinNew}
               alt="linkedin"
-              className="object-contain h-[20px] w-[25px] mt-[4px]"
+              className="object-contain h-[20px] w-[25px] mt-[4px] inline-block fb-25"
             />
             <div
-              className="text-[20px] font-normal leading-[144%] text-white group-hover:text-primary transition-colors duration-500"
+              className="text-[20px] font-normal leading-[144%] text-white group-hover:text-primary transition-colors duration-500 break-words"
             >
               https://www.linkedin.com/company/vault-investments-limited/
             </div>
@@ -148,18 +148,31 @@ function ContactDetailsDestop() {
 function ContactDetailsMobile() {
   return (
     <div className="flex md:hidden flex-col gap-[21px]">
-      <div className="flex gap-[19px]">
-        <Link href="#" className="group">
+      <Link href="https://www.linkedin.com/company/vault-investments-limited/" className="group" target="_blank">
+        <div className="flex gap-[19px]">
           <Image
             src={linkedinNew}
-            alt="mail"
-            className="object-contain h-[13px] md:h-[20px] w-[20px] mt-1"
+            alt="linkedin"
+            className="object-contain h-[13px] md:h-[20px] w-[20px] mt-1 fb-20"
           />
           <div
-            className="text-[16px] md:text-[20px] font-normal leading-[144%] text-white group-hover:text-primary transition-colors duration-500"
+            className="text-[16px] md:text-[20px] font-normal leading-[144%] text-white group-hover:text-primary transition-colors duration-500 break-word"
           >
-            contact@vault.com.mx
+            https://www.linkedin.com/company/vault-investments-limited/
           </div>
+        </div>
+      </Link>
+      <div className="flex gap-[19px]">
+        <Image
+          src={mail}
+          alt="mail"
+          className="object-contain h-[13px] md:h-[20px] w-[20px] mt-1"
+        />
+        <Link
+          href="mailto:contact@vault.com.mx"
+          className="text-[16px] md:text-[20px] font-normal leading-[144%] text-white hover:text-primary transition-colors duration-500"
+        >
+          contact@vault.com.mx
         </Link>
       </div>
       <div className="flex gap-[19px]">
@@ -202,7 +215,7 @@ function FooterMenu() {
           className="text-[13.439px] md:text-[18px] font-normal hover:font-bold leading-[144%] transition-all duration-300 text-white hover:text-primary "
           href="#portfolio"
         >
-          {t("portfolio")}
+          {t("funds")}
         </Link>
       </li>
       <li className="inline-block">
@@ -213,7 +226,7 @@ function FooterMenu() {
           {t("contact_us")}
         </Link>
       </li>
-      <li className="inline-block md:hidden">
+      <li className="inline-block">
         <Link 
           className="text-[13.439px] md:text-[20px] font-normal leading-[144%] text-white hover:text-primary transition-colors duration-500"
           href="https://www.vault-capital.com/legal" target="_blank"

@@ -7,13 +7,19 @@ import close from "@/../../public/svg/close.svg";
 import Humbergure from "@/../../public/images/humberguer.png";
 import LangSwitcher from "../LangSwitcher/page";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+
 export default function Header() {
   const t = useTranslations("Navmenu");
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const initialLang = pathname.startsWith("/es") ? "es" : "en";
+  const [currentLang, setCurrentLang] = useState<string>(initialLang);
 
   function openMenu() {
     setIsOpen(!isOpen);
   }
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
@@ -21,6 +27,10 @@ export default function Header() {
       document.body.classList.remove("overflow-hidden");
     }
   }, [isOpen]);
+
+  const handleLanguageChange = (lang: string) => {
+    setCurrentLang(lang);
+  };
 
   return (
     <section className="relative z-[999] bg-transparent">
@@ -30,7 +40,7 @@ export default function Header() {
             <Image src={HLogo} alt="logo" className="w-full" />
           </div>
           <div className="flex flex-row gap-[24px] md:gap-[32px] xl:gap-[42px] xxl:gap-[50px]">
-            <LangSwitcher />
+            <LangSwitcher onLanguageChange={handleLanguageChange} />
             <div className="relative z-20 h-fit my-auto">
               <div
                 className="z-20 flex flex-col justify-between gap-[6px] cursor-pointer hover:opacity-60 transition-opacity duration-500"
@@ -41,7 +51,7 @@ export default function Header() {
               </div>
               <div className="absolute z-50 max-sm:fixed max-sm:left-0 max-sm:top-0 sm:top-[-22px]  md:-top-10 sm:right-0">
                 {isOpen && (
-                  <DropdownMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+                  <DropdownMenu isOpen={isOpen} setIsOpen={setIsOpen} currentLang={currentLang} />
                 )}
               </div>
               {isOpen && (
@@ -56,73 +66,80 @@ export default function Header() {
       </div>
     </section>
   );
+}
 
-  function DropdownMenu({
-    isOpen,
-    setIsOpen,
-  }: {
-    isOpen: boolean;
-    setIsOpen: (value: boolean) => void;
-  }) {
-    return (
-      <div className="!z-[999] relative rounded-[10px] bg-secondary px-[30px] pb-[50px] pt-[16px] md:pt-[40px] shadow-[0px_4px_40px_0px_#FFFFFF4D] max-sm:h-screen max-sm:w-screen">
-        <ul className="flex flex-col gap-[25px] text-nowrap pr-[30px] bg-secondary">
-          <li className="inline-block">
-            <Link
-              href="#sectors"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
-            >
-              {t("our_sectors")}
-            </Link>
-          </li>
-          <li className="inline-block">
-            <Link
-              href="#portfolio"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
-            >
-              {t("portfolio")}
-            </Link>
-          </li>
-          <li className="inline-block">
-            <Link
-              href="https://www.vault-capital.com/individuals" target="_blank"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
-            >
-              {t("individual_investment")}
-            </Link>
-          </li>
-          <li className="inline-block">
-            <Link
-              href="#contact"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
-            >
-              {t("contact_us")}
-            </Link>
-          </li>
-          <li className="inline-block">
-            <Link href="https://www.vault-capital.com/legal" target="_blank"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary text-[20px] font-normal leading-[144%] cursor-pointer"
-            >
-              {t("legal")}
-            </Link>
-          </li>
-        </ul>
-        <div
-          onClick={() => setIsOpen(!isOpen)}
-          className="cursor-pointer absolute top-[16px] right-[16px] md:top-[40px] md:right-[30px] z-10 group"
-        >
-          <Image
-            src={close}
-            alt="close"
-            className="w-[25px] h-[25px] group-hover:opacity-60 transition-opacity duration-500"
-          />
-        </div>
+function DropdownMenu({
+  isOpen,
+  setIsOpen,
+  currentLang,
+}: {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+  currentLang: string;
+}) {
+  const t = useTranslations("Navmenu");
+
+  return (
+    <div className="!z-[999] relative rounded-[10px] bg-secondary px-[30px] pb-[50px] pt-[16px] md:pt-[40px] shadow-[0px_4px_40px_0px_#FFFFFF4D] max-sm:h-screen max-sm:w-screen">
+      <ul className="flex flex-col gap-[25px] text-nowrap pr-[30px] bg-secondary">
+        <li className="inline-block">
+          <Link
+            href="#sectors"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
+          >
+            {t("our_sectors")}
+          </Link>
+        </li>
+        <li className="inline-block">
+          <Link
+            href="#portfolio"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
+          >
+            {t("portfolio")}
+          </Link>
+        </li>
+        <li className="inline-block">
+          <Link
+            href={`https://www.vault-capital.com/individuals/${currentLang}`}
+            target="_blank"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
+          >
+            {t("individual_investment")}
+          </Link>
+        </li>
+        <li className="inline-block">
+          <Link
+            href="#contact"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
+          >
+            {t("contact_us")}
+          </Link>
+        </li>
+        <li className="inline-block">
+          <Link
+            href={`https://www.vault-capital.com/legal`}
+            target="_blank"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white hover:text-primary text-[20px] font-normal leading-[144%] cursor-pointer"
+          >
+            {t("legal")}
+          </Link>
+        </li>
+      </ul>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="cursor-pointer absolute top-[16px] right-[16px] md:top-[40px] md:right-[30px] z-10 group"
+      >
+        <Image
+          src={close}
+          alt="close"
+          className="w-[25px] h-[25px] group-hover:opacity-60 transition-opacity duration-500"
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }

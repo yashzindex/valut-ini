@@ -5,7 +5,7 @@
     "title_third": "mercados privados",
     "a_leading": "Un",
     "title_yellow":"Administrador de",
-    "americas_private":"<color-primary>Activos</color-primary> líder en el mercado",
+    "americas_private":"<color-primary> Activos </color-primary> líder en el mercado",
     "credit_market":"de <color-primary>Crédito Privado</color-primary>",
     "hero-subline": "Apoyamos la inclusión financiera a través del Crédito Privado",
     "hero_contact":"Contáctanos"
@@ -81,7 +81,7 @@
       "first": {
         "f_img": "/images/fundsImg.png",
         "fund": "FONDO I",
-        "card_title":"Crédito de Descuento de Nómina en Mexico"
+        "card_title":"Crédito de Descuento de Nómina en México"
       },
       "second": {
         "f_img": "/images/fundsImg.png",
@@ -114,6 +114,7 @@
     "our_focus_sectors": "Nuestros sectores",
     "portfolio": "Portafolio",
     "contact_us": "Contacto",
-    "legal": "Legal"
+    "legal": "Legal",
+    "funds": "Fondos"
   }
 }

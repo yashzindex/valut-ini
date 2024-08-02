@@ -25,7 +25,7 @@ export default function FixedHeader() {
                   offset={50}
                   duration={500}
                   activeClass="!text-primary"
-                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%]`}
+                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%] cursor-pointer`}
                 >
                   {t("home")}
                 </Link>
@@ -38,7 +38,7 @@ export default function FixedHeader() {
                   offset={50}
                   duration={500}
                   activeClass="!text-primary"
-                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%]`}
+                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%] cursor-pointer`}
                 >
                   {t("sectors")}
                 </Link>
@@ -51,7 +51,7 @@ export default function FixedHeader() {
                   offset={50}
                   duration={500}
                   activeClass="!text-primary"
-                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%]`}
+                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%] cursor-pointer`}
                 >
                   {t("portfolio")}
                 </Link>
@@ -64,7 +64,7 @@ export default function FixedHeader() {
                   offset={50}
                   duration={500}
                   activeClass="!text-primary"
-                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%]`}
+                  className={`text-secondary  hover:text-primary transition-colors duration-500 text-[20px] font-normal leading-[144%] cursor-pointer`}
                 >
                   {t("contact_us")}
                 </Link>
