@@ -84,6 +84,16 @@ function DropdownMenu({
       <ul className="flex flex-col gap-[25px] text-nowrap pr-[30px] bg-secondary">
         <li className="inline-block">
           <Link
+            href={`https://www.vault-capital.com/individuals/${currentLang}`}
+            target="_blank"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
+          >
+            {t("individual_investment")}
+          </Link>
+        </li>
+        <li className="inline-block">
+          <Link
             href="#sectors"
             onClick={() => setIsOpen(!isOpen)}
             className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
@@ -98,16 +108,6 @@ function DropdownMenu({
             className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
           >
             {t("portfolio")}
-          </Link>
-        </li>
-        <li className="inline-block">
-          <Link
-            href={`https://www.vault-capital.com/individuals/${currentLang}`}
-            target="_blank"
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white hover:text-primary text-[20px] font-normal leading-[144%]"
-          >
-            {t("individual_investment")}
           </Link>
         </li>
         <li className="inline-block">

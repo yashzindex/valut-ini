@@ -30,10 +30,10 @@
     "contact_us" : "Contact"
   },
   "Navmenu":{
-    "our_sectors" : "Our sectors",
+    "our_sectors" : "Sectors",
     "portfolio" : "Funds",
-    "individual_investment" : "Individual Investment",
-    "contact_us" : "Contact us",
+    "individual_investment" : "Individual Investors",
+    "contact_us" : "Contact",
     "legal" : "Legal"
   },
   "sectors": {
@@ -82,7 +82,7 @@
       "first": {
         "f_img": "/images/fundsImg.png",
         "fund":"FUND I",
-        "card_title":"México Payroll Discount Lending"
+        "card_title":"Mexico Payroll Discount Lending"
       },
       "second": {
         "f_img": "/images/fundsImg.png",
@@ -112,9 +112,9 @@
   },
   "Footer": {
     "home": "Home",
-    "our_focus_sectors": "Our focus sectors",
+    "our_focus_sectors": "Sectors",
     "portfolio": "Portfolio",
-    "contact_us": "Contact us",
+    "contact_us": "Contact",
     "legal": "Legal",
     "funds": "Funds"
   }

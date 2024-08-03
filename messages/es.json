@@ -29,9 +29,9 @@
     "contact_us" : "Contacto"
   },
   "Navmenu":{
-    "our_sectors" : "Nuestros factores",
+    "our_sectors" : "Sectores",
     "portfolio" : "Fondos",
-    "individual_investment" : "Inversionista individual",
+    "individual_investment" : "Inversionistas Individuales",
     "contact_us" : "Contacto",
     "legal" : "Legal"
   },
@@ -111,7 +111,7 @@
   },
   "Footer": {
     "home": "Inicio",
-    "our_focus_sectors": "Nuestros sectores",
+    "our_focus_sectors": "Sectores",
     "portfolio": "Portafolio",
     "contact_us": "Contacto",
     "legal": "Legal",
